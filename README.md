@@ -3,9 +3,9 @@ Filter size planning for "padless" deep CNN design
 
 Using `Python 3`
 
-The goal is to avoid padding (adding artificial zeros to) the feature maps in a deep convolution network. To accomplish this, filter sizes should be carefully designed.
+The goal is to avoid padding, i.e. extending the width and height of the feature maps by appending rows and columns of zeros to the tensor borders, in a deep convolution network. To accomplish this, filter sizes should be carefully designed.
 
-I take a brute-force approach in computing the compatible filter and input sizes to reach a certain depth in a CNN.
+Here, we take a brute-force approach in computing the compatible filter and input sizes to reach a certain depth in a CNN.
 
 Example output for U-Net with target input image shape `{"height":100, "width":200}`, filter choices of sizes 2, 3, 4, 5, 6, U-Net depth from 3 to 9 and stride of 2 in all layers.
 
