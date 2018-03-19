@@ -9,7 +9,7 @@ filter_size_list = [3, 4, 5]
 minimum_net_depth = 8
 maximum_net_depth = 10
 stride = 2
-starting_size_list = range(1, 5) # at deepest layer
+starting_size_list = range(1, 10) # at deepest layer
 
 def main():
     sizes = {}

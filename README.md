@@ -7,53 +7,11 @@ The goal is to avoid padding, i.e. extending the width and height of the feature
 
 Here, we take a brute-force approach in computing the compatible filter and input sizes to reach a certain depth in a CNN.
 
-Example output for U-Net with target input image shape `{"height":100, "width":200}`, filter choices of sizes 2, 3, 4, 5, 6, U-Net depth from 3 to 9 and stride of 2 in all layers.
+Example output for U-Net with target input image shape `{"height":512, "width":512}`, filter choices of sizes 3, 4, 5, U-Net depth from 8 to 10 and stride of 2 in all layers.
 
 ```
 Generating filter sizes for height:
-filter size sequence (deep to shallow): [3, 5, 5, 6, 6], input size: 96
-filter size sequence (deep to shallow): [3, 5, 6, 4, 6], input size: 96
-filter size sequence (deep to shallow): [3, 5, 6, 5, 4], input size: 96
-filter size sequence (deep to shallow): [3, 5, 6, 5, 5], input size: 97
-filter size sequence (deep to shallow): [3, 5, 6, 5, 6], input size: 98
-....
-filter size sequence (deep to shallow): [6, 2, 2, 2, 2], input size: 96
-filter size sequence (deep to shallow): [6, 2, 2, 2, 3], input size: 97
-filter size sequence (deep to shallow): [6, 2, 2, 2, 4], input size: 98
-filter size sequence (deep to shallow): [6, 2, 2, 2, 5], input size: 99
-filter size sequence (deep to shallow): [6, 2, 2, 3, 2], input size: 98
-filter size sequence (deep to shallow): [2, 2, 3, 5, 6, 6], input size: 96
-filter size sequence (deep to shallow): [2, 2, 3, 6, 4, 6], input size: 96
-filter size sequence (deep to shallow): [2, 2, 3, 6, 5, 4], input size: 96
-filter size sequence (deep to shallow): [2, 2, 3, 6, 5, 5], input size: 97
-filter size sequence (deep to shallow): [2, 2, 3, 6, 5, 6], input size: 98
-...
-filter size sequence (deep to shallow): [2, 4, 2, 2, 3, 3], input size: 99
-filter size sequence (deep to shallow): [3, 2, 2, 2, 2, 2], input size: 96
-filter size sequence (deep to shallow): [3, 2, 2, 2, 2, 3], input size: 97
-filter size sequence (deep to shallow): [3, 2, 2, 2, 2, 4], input size: 98
-filter size sequence (deep to shallow): [3, 2, 2, 2, 2, 5], input size: 99
+filter size sequence (deep to shallow): [3, 3, 3, 3, 3, 3, 3, 4], proper input sizes: [512, 768, 1024, 1280, 1536, 1792, 2048, 2304, 2560]
 Generating filter sizes for width:
-filter size sequence (deep to shallow): [3, 5, 5, 6, 6, 6], input size: 196
-filter size sequence (deep to shallow): [3, 5, 6, 4, 6, 6], input size: 196
-filter size sequence (deep to shallow): [3, 5, 6, 5, 4, 6], input size: 196
-filter size sequence (deep to shallow): [3, 5, 6, 5, 5, 4], input size: 196
-filter size sequence (deep to shallow): [3, 5, 6, 5, 5, 5], input size: 197
-...
-filter size sequence (deep to shallow): [6, 2, 2, 2, 5, 3], input size: 199
-filter size sequence (deep to shallow): [6, 2, 2, 3, 2, 2], input size: 196
-filter size sequence (deep to shallow): [6, 2, 2, 3, 2, 3], input size: 197
-filter size sequence (deep to shallow): [6, 2, 2, 3, 2, 4], input size: 198
-filter size sequence (deep to shallow): [6, 2, 2, 3, 2, 5], input size: 199
-filter size sequence (deep to shallow): [2, 2, 3, 5, 6, 6, 6], input size: 196
-filter size sequence (deep to shallow): [2, 2, 3, 6, 4, 6, 6], input size: 196
-filter size sequence (deep to shallow): [2, 2, 3, 6, 5, 4, 6], input size: 196
-filter size sequence (deep to shallow): [2, 2, 3, 6, 5, 5, 4], input size: 196
-filter size sequence (deep to shallow): [2, 2, 3, 6, 5, 5, 5], input size: 197
-...
-filter size sequence (deep to shallow): [3, 2, 2, 2, 2, 5, 3], input size: 199
-filter size sequence (deep to shallow): [3, 2, 2, 2, 3, 2, 2], input size: 196
-filter size sequence (deep to shallow): [3, 2, 2, 2, 3, 2, 3], input size: 197
-filter size sequence (deep to shallow): [3, 2, 2, 2, 3, 2, 4], input size: 198
-filter size sequence (deep to shallow): [3, 2, 2, 2, 3, 2, 5], input size: 199
+filter size sequence (deep to shallow): [3, 3, 3, 3, 3, 3, 3, 4], proper input sizes: [512, 768, 1024, 1280, 1536, 1792, 2048, 2304, 2560]
 ```
