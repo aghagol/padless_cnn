@@ -16,7 +16,7 @@ def main():
     for starting_size in starting_size_list:
         sizes[starting_size] = {}
         children = [{'output_size': starting_size, 'filter_size': []}]
-        for depth in range(maximum_net_depth, -1, -1):
+        for depth in range(maximum_net_depth, 0, -1):
             sizes[starting_size][depth] = children
             children = []
             for node in sizes[starting_size][depth]:
@@ -24,6 +24,7 @@ def main():
                     children.append({
                         'output_size': util.get_input_size(node['output_size'], filter_size, stride),
                         'filter_size': node['filter_size'] + [filter_size]})
+        sizes[starting_size][0] = children
 
     for target_name, target_size in target_shape.items():
         print('Generating filter sizes for {}:'.format(target_name))
